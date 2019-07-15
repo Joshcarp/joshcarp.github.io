@@ -5,13 +5,13 @@
     <description>Still don't know...</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 15 Jul 2019 13:30:59 +0000</pubDate>
-    <lastBuildDate>Mon, 15 Jul 2019 13:30:59 +0000</lastBuildDate>
+    <pubDate>Mon, 15 Jul 2019 13:32:52 +0000</pubDate>
+    <lastBuildDate>Mon, 15 Jul 2019 13:32:52 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
     
       <item>
-        <title>Github Pages, Jekyll, Travis CI</title>
+        <title>nyubyub</title>
         <description>&lt;p&gt;The tutorial which helped me the most has been this:
 &lt;a href=&quot;http://dev.im-bot.com/jekyll-travis-github/&quot;&gt;http://dev.im-bot.com/jekyll-travis-github/&lt;/a&gt;
 Although When I was following there still were a few things which were unclear. So here we are…&lt;/p&gt;
