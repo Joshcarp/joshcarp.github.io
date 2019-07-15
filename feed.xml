@@ -1,1 +1,155 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-07-15T12:09:00+00:00</updated><id>/feed.xml</id><title type="html">Joshua Carpeggiani</title><subtitle>Still don't know...</subtitle></feed>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Joshua Carpeggiani</title>
+    <description>Still don't know...</description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 15 Jul 2019 12:12:27 +0000</pubDate>
+    <lastBuildDate>Mon, 15 Jul 2019 12:12:27 +0000</lastBuildDate>
+    <generator>Jekyll v3.8.6</generator>
+    
+    
+      <item>
+        <title>Github Pages, Jekyll, Travis CI</title>
+        <description>&lt;p&gt;The tutorial which helped me the most has been this:
+&lt;a href=&quot;http://dev.im-bot.com/jekyll-travis-github/&quot;&gt;http://dev.im-bot.com/jekyll-travis-github/&lt;/a&gt;
+Although When I was following there still were a few things which were unclear. So here we are…&lt;/p&gt;
+&lt;h2 id=&quot;1-getting-a-skeleton-jekyll-website-up&quot;&gt;1. Getting a skeleton Jekyll website up&lt;/h2&gt;
+
+&lt;p&gt;I discovered that someone already made a template repo: &lt;a href=&quot;https://github.com/barryclark/jekyll-now&quot;&gt;https://github.com/barryclark/jekyll-now&lt;/a&gt;&lt;br /&gt;
+Or fork from &lt;a href=&quot;https://github.com/joshcarp/joshcarp.github.io&quot;&gt;https://github.com/joshcarp/joshcarp.github.io&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;I guess it’s advised to get Jekyll running locally, even though the end game is to have it all deployable through travis; Sometimes you’ll install a plugin and want to test it locally/ need to install another Gem or something. 
+&lt;br /&gt;&lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;https://jekyllrb.com/docs/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-travis-build-to-master&quot;&gt;2. Travis build to master&lt;/h2&gt;
+&lt;p&gt;Secondly You’ll need a github access token with repo push access only and travis set up in order for it to push to master.&lt;/p&gt;
+
+&lt;p&gt;After you’ve got your access key you want to install the travis gem and hash it then add replace yours in the &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt; file in the repo. 
+Oh, don’t forget to enable travis builds on the &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt; branch&lt;/p&gt;
+
+&lt;h2 id=&quot;3-customising-jekyll&quot;&gt;3. Customising Jekyll&lt;/h2&gt;
+&lt;p&gt;You can customise the theme your website uses by adding &lt;code class=&quot;highlighter-rouge&quot;&gt;theme: theme_name&lt;/code&gt; to the &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; and adding the gem to your Gemfile then bundle install to update dependencies.&lt;/p&gt;
+
+&lt;p&gt;Another option is to branch the repo of a theme, add the _site, _includes, _sass/, assets/ and scripts/ to your Jekyll branch, although I haven’t tested this.&lt;/p&gt;
+
+&lt;h2 id=&quot;4-enabling-google-analytics&quot;&gt;4. Enabling google analytics&lt;/h2&gt;
+&lt;p&gt;add &lt;code class=&quot;highlighter-rouge&quot;&gt;google_analytics: &amp;lt;YOUR ANALYTICS CODE&amp;gt;&lt;/code&gt; to your &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;h2 id=&quot;6-adding-a-custom-domain&quot;&gt;6. Adding a custom domain&lt;/h2&gt;
+&lt;p&gt;I’m using google domains with a DNS CNAME record which forwards joshcarp.com to joshcarp.github.io. 
+To enable this on the github pages I made a file called CNAME on the &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt; branch in the root directory and in &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; and also one in the root of master with &lt;code class=&quot;highlighter-rouge&quot;&gt;joshcarp.com&lt;/code&gt; in it, that way github will allow incoming connections from &lt;code class=&quot;highlighter-rouge&quot;&gt;joshcarp.com&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;7-custom-permalinks&quot;&gt;7. custom permalinks&lt;/h2&gt;
+&lt;p&gt;A permalink is how your pages show up in the url. To set a custom one you can add a link in &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;:&lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;permalink: /:title/&lt;/code&gt;
+some other conventions include using dates, although I don’t think that is necessary at this point.&lt;/p&gt;
+
+&lt;h2 id=&quot;5-problems&quot;&gt;5. Problems&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;After installing new plugins Travis was failing:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;The command &quot;bundle exec jekyll build&quot; exited with 1.&lt;/code&gt;
+&lt;br /&gt;to fix this we need to update the Gemfile by appending the plugin gems &lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;gem 'jekyll-sitemap'
+ gem 'jekyll-seo-tag'&lt;/code&gt;
+&lt;br /&gt;
+Then the Gems need to be installed with:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;bundle install &amp;amp;&amp;amp; bundle update&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;If Google analytics isn’t working, make sure that you’ve set the  &lt;code class=&quot;highlighter-rouge&quot;&gt;JEKYLL_ENV=production&lt;/code&gt; as an environment variable in travisci&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;apache-virtual-hosts&quot;&gt;Apache Virtual hosts&lt;/h1&gt;
+&lt;p&gt;I still want some subdomains to point at my home network, and with that, I want to be able to host multiple websites on the same domain. 
+Apache virtual hosts are a way to “redirect” based on where traffic is coming from. 
+In my case I have a &lt;code class=&quot;highlighter-rouge&quot;&gt;go present&lt;/code&gt; presentation running on port 8080 of my server, although I want to be able to access this at the web address gophercon.joshcarp.com &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;DNS records fundamentally don’t allow port redirects, so virtual hosts are a way around this. 
+Steps:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Have a CNAME record pointing &lt;code class=&quot;highlighter-rouge&quot;&gt;gophercon.joshcarp.com&lt;/code&gt; to my home IP address.&lt;/li&gt;
+  &lt;li&gt;Have apache running on port 80&lt;/li&gt;
+  &lt;li&gt;in &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/apache2/sites-avaliable&lt;/code&gt; add a file &lt;code class=&quot;highlighter-rouge&quot;&gt;gophercon.joshcarp.com.conf&lt;/code&gt; and add&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;VirtualHost &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;:80&amp;gt; 
+  ProxyPreserveHost On
+  ProxyRequests Off
+  ServerName gophercon.joshcarp.com
+  ProxyPass  / http://localhost:8080/
+&amp;lt;/VirtualHost&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ol&gt;
+  &lt;li&gt;enable the site with &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo a2ensite gophercon.joshcarp.com.conf&lt;/code&gt;&lt;br /&gt;
+This will redirect incoming traffic from gophercon.joshcarp.com to port 8080 on localhost.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I can also use this to set root directories for serving websites. 
+If I want to set a document root and serve files from there, I can with the following config&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;VirtualHost &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;:80&amp;gt;
+    ProxyPreserveHost On
+     ProxyRequests Off
+     DocumentRoot &lt;span class=&quot;s2&quot;&gt;&quot;/var/www/html&quot;&lt;/span&gt;
+     ServerName home.joshcarp.com
+   &amp;lt;/VirtualHost&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;And this will serve all the documents in “/var/www/html” when incoming traffic is encountered from home.joshcarp.com, although I want to keep all web related stuff on github pages at the moment.&lt;/p&gt;
+
+&lt;p&gt;References:
+&lt;a href=&quot;http://dev.im-bot.com/jekyll-travis-github/&quot;&gt;http://dev.im-bot.com/jekyll-travis-github/&lt;/a&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+        <link>/posts/Github-And-Jekyll/</link>
+        <guid isPermaLink="true">/posts/Github-And-Jekyll/</guid>
+        
+        
+        <category>posts</category>
+        
+      </item>
+    
+      <item>
+        <title>Go Course</title>
+        <description>&lt;p&gt;A whole bunch of stuff about the go course and links and all to github repos and all&lt;/p&gt;
+</description>
+        <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+        <link>/posts/Go-Course/</link>
+        <guid isPermaLink="true">/posts/Go-Course/</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>(Binary) floating point, decimal floating point and Go</title>
+        <description>&lt;p&gt;So I’ve been working on a project and all:
+&amp;lt;github.com/anz-bank/decimal&amp;gt;&lt;/p&gt;
+
+&lt;p&gt;Floating point arithmetic: Link and snippet to blog&lt;/p&gt;
+
+&lt;p&gt;Failure of floating point numbers&lt;/p&gt;
+
+&lt;p&gt;How Decimal numbers fix them&lt;/p&gt;
+
+&lt;p&gt;Arbirtrary numbers and Fixed precision numbers: Integer speed tests&lt;/p&gt;
+
+&lt;p&gt;So this means that a fixed size decimal is faster? ….&lt;/p&gt;
+
+&lt;p&gt;Link to presentation and all &lt;gophercon.joshcarp.com&gt;&lt;/gophercon.joshcarp.com&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 11 Jul 2019 00:00:00 +0000</pubDate>
+        <link>/posts/decimal/</link>
+        <guid isPermaLink="true">/posts/decimal/</guid>
+        
+        
+        <category>decimal</category>
+        
+      </item>
+    
+  </channel>
+</rss>
