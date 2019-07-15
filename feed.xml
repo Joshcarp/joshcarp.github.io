@@ -1,4 +1,80 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-07-15T04:31:32+00:00</updated><id>/feed.xml</id><title type="html">Joshua Carpeggiani</title><subtitle>Still don't know...</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="/posts/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2019-07-03T02:23:24+00:00</published><updated>2019-07-03T02:23:24+00:00</updated><id>/posts/welcome-to-jekyll</id><content type="html" xml:base="/posts/welcome-to-jekyll/">&lt;p&gt;∆&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-07-15T04:34:12+00:00</updated><id>/feed.xml</id><title type="html">Joshua Carpeggiani</title><subtitle>Still don't know...</subtitle><entry><title type="html">Github Pages, Jekyll, Travis CI</title><link href="/posts/Github-And-Jekyll/" rel="alternate" type="text/html" title="Github Pages, Jekyll, Travis CI" /><published>2019-07-15T00:00:00+00:00</published><updated>2019-07-15T00:00:00+00:00</updated><id>/posts/Github-And-Jekyll</id><content type="html" xml:base="/posts/Github-And-Jekyll/">&lt;p&gt;References:
+&lt;a href=&quot;http://dev.im-bot.com/jekyll-travis-github/&quot;&gt;http://dev.im-bot.com/jekyll-travis-github/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1-getting-a-skeleton-jekyll-website-up&quot;&gt;1. Getting a skeleton Jekyll website up&lt;/h2&gt;
+
+&lt;p&gt;I discovered that someone already made a template repo: &lt;a href=&quot;https://github.com/barryclark/jekyll-now&quot;&gt;https://github.com/barryclark/jekyll-now&lt;/a&gt;&lt;br /&gt;
+Or fork from &lt;a href=&quot;https://github.com/joshcarp/joshcarp.github.io&quot;&gt;https://github.com/joshcarp/joshcarp.github.io&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;I guess it’s advised to get Jekyll running locally, even though the end game is to have it all deployable through travis; Sometimes you’ll install a plugin and want to test it locally/ need to install another Gem or something. 
+&lt;br /&gt;&lt;a href=&quot;https://jekyllrb.com/docs/&quot;&gt;https://jekyllrb.com/docs/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2-travis-build-to-master&quot;&gt;2. Travis build to master&lt;/h2&gt;
+&lt;p&gt;Secondly You’ll need a github access token with repo push access only and travis set up in order for it to push to master.&lt;/p&gt;
+
+&lt;p&gt;After you’ve got your access key you want to install the travis gem and hash it then add replace yours in the &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt; file in the repo. 
+Oh, don’t forget to enable travis builds on the &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt; branch&lt;/p&gt;
+
+&lt;h2 id=&quot;3-customising-jekyll&quot;&gt;3. Customising Jekyll&lt;/h2&gt;
+&lt;p&gt;You can customise the theme your website uses by adding &lt;code class=&quot;highlighter-rouge&quot;&gt;theme: theme_name&lt;/code&gt; to the &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; and adding the gem to your Gemfile then bundle install to update dependencies.&lt;/p&gt;
+
+&lt;p&gt;Another option is to branch the repo of a theme, add the _site, _includes, _sass/, assets/ and scripts/ to your Jekyll branch, although I haven’t tested this.&lt;/p&gt;
+
+&lt;h2 id=&quot;4-enabling-google-analytics&quot;&gt;4. Enabling google analytics&lt;/h2&gt;
+&lt;p&gt;add &lt;code class=&quot;highlighter-rouge&quot;&gt;google_analytics: &amp;lt;YOUR ANALYTICS CODE&amp;gt;&lt;/code&gt; to your &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; file.&lt;/p&gt;
+
+&lt;h2 id=&quot;6-adding-a-custom-domain&quot;&gt;6. Adding a custom domain&lt;/h2&gt;
+&lt;p&gt;I’m using google domains with a CNAME record which forwards joshcarp.com to joshcarp.github.io. 
+To enable this on the github pages I made a file called CNAME on the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt; branch with &lt;code class=&quot;highlighter-rouge&quot;&gt;joshcarp.com&lt;/code&gt; in it, that way github will allow connections from &lt;code class=&quot;highlighter-rouge&quot;&gt;joshcarp.com&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;5-problems&quot;&gt;5. Problems&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;After installing new plugins Travis was failing:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;The command &quot;bundle exec jekyll build&quot; exited with 1.&lt;/code&gt;
+&lt;br /&gt;to fix this we need to update the Gemfile by appending the plugin gems &lt;br /&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;gem 'jekyll-sitemap'
+ gem 'jekyll-seo-tag'&lt;/code&gt;
+&lt;br /&gt;
+Then the Gems need to be installed with:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;bundle install &amp;amp;&amp;amp; bundle update&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;apache-virtual-hosts&quot;&gt;Apache Virtual hosts&lt;/h1&gt;
+&lt;p&gt;I still want some subdomains to point at my home network, and with that, I want to be able to host multiple websites on the same domain. 
+Apache virtual hosts are a way to “redirect” based on where traffic is coming from. 
+In my case I have a &lt;code class=&quot;highlighter-rouge&quot;&gt;go present&lt;/code&gt; presentation running on port 8080 of my server, although I want to be able to access this at the web address gophercon.joshcarp.com &lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;DNS records fundamentally don’t allow port redirects, so virtual hosts are a way around this. 
+Steps:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Have a CNAME record pointing &lt;code class=&quot;highlighter-rouge&quot;&gt;gophercon.joshcarp.com&lt;/code&gt; to my home IP address.&lt;/li&gt;
+  &lt;li&gt;Have apache running on port 80&lt;/li&gt;
+  &lt;li&gt;in &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/apache2/sites-avaliable&lt;/code&gt; add a file &lt;code class=&quot;highlighter-rouge&quot;&gt;gophercon.joshcarp.com.conf&lt;/code&gt; and add
+```&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&amp;lt;VirtualHost *:80&amp;gt; 
+  ProxyPreserveHost On
+  ProxyRequests Off
+  ServerName gophercon.joshcarp.com
+  ProxyPass  / http://localhost:8080/
+&amp;lt;/VirtualHost&amp;gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;4. enable the site with `sudo a2ensite gophercon.joshcarp.com.conf`
+- This will redirect incoming traffic from gophercon.joshcarp.com to port 8080 on localhost. 
+
+If I want to set a document root and serve files from there, I can with the following config
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&amp;lt;VirtualHost *:80&amp;gt;
+    ProxyPreserveHost On
+     ProxyRequests Off
+     DocumentRoot “/var/www/html”
+     ServerName home.joshcarp.com
+   &amp;lt;/VirtualHost&amp;gt;
+```&lt;/p&gt;
+
+&lt;p&gt;And this will serve all the documents in “/var/www/html” when incoming traffic is encountered from home.joshcarp.com&lt;/p&gt;
+
+&lt;p&gt;References:
+&lt;a href=&quot;http://dev.im-bot.com/jekyll-travis-github/&quot;&gt;http://dev.im-bot.com/jekyll-travis-github/&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">References: http://dev.im-bot.com/jekyll-travis-github/</summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="/posts/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2019-07-03T02:23:24+00:00</published><updated>2019-07-03T02:23:24+00:00</updated><id>/posts/welcome-to-jekyll</id><content type="html" xml:base="/posts/welcome-to-jekyll/">&lt;p&gt;∆&lt;/p&gt;
 
 &lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
 

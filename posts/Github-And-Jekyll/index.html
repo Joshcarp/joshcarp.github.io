@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Github Pages, Jekyll, Travis CI | Joshua Carpeggiani</title>
+<meta name="generator" content="Jekyll v3.8.6" />
+<meta property="og:title" content="Github Pages, Jekyll, Travis CI" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="References: http://dev.im-bot.com/jekyll-travis-github/" />
+<meta property="og:description" content="References: http://dev.im-bot.com/jekyll-travis-github/" />
+<link rel="canonical" href="/posts/Github-And-Jekyll/" />
+<meta property="og:url" content="/posts/Github-And-Jekyll/" />
+<meta property="og:site_name" content="Joshua Carpeggiani" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-07-15T00:00:00+00:00" />
+<script type="application/ld+json">
+{"description":"References: http://dev.im-bot.com/jekyll-travis-github/","@type":"BlogPosting","url":"/posts/Github-And-Jekyll/","headline":"Github Pages, Jekyll, Travis CI","dateModified":"2019-07-15T00:00:00+00:00","datePublished":"2019-07-15T00:00:00+00:00","mainEntityOfPage":{"@type":"WebPage","@id":"/posts/Github-And-Jekyll/"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Joshua Carpeggiani" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Joshua Carpeggiani</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">About</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Github Pages, Jekyll, Travis CI</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-07-15T00:00:00+00:00" itemprop="datePublished">Jul 15, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>References:
+<a href="http://dev.im-bot.com/jekyll-travis-github/">http://dev.im-bot.com/jekyll-travis-github/</a></p>
+
+<h2 id="1-getting-a-skeleton-jekyll-website-up">1. Getting a skeleton Jekyll website up</h2>
+
+<p>I discovered that someone already made a template repo: <a href="https://github.com/barryclark/jekyll-now">https://github.com/barryclark/jekyll-now</a><br />
+Or fork from <a href="https://github.com/joshcarp/joshcarp.github.io">https://github.com/joshcarp/joshcarp.github.io</a><br /></p>
+
+<p>I guess it’s advised to get Jekyll running locally, even though the end game is to have it all deployable through travis; Sometimes you’ll install a plugin and want to test it locally/ need to install another Gem or something. 
+<br /><a href="https://jekyllrb.com/docs/">https://jekyllrb.com/docs/</a></p>
+
+<h2 id="2-travis-build-to-master">2. Travis build to master</h2>
+<p>Secondly You’ll need a github access token with repo push access only and travis set up in order for it to push to master.</p>
+
+<p>After you’ve got your access key you want to install the travis gem and hash it then add replace yours in the <code class="highlighter-rouge">.travis.yml</code> file in the repo. 
+Oh, don’t forget to enable travis builds on the <code class="highlighter-rouge">jekyll</code> branch</p>
+
+<h2 id="3-customising-jekyll">3. Customising Jekyll</h2>
+<p>You can customise the theme your website uses by adding <code class="highlighter-rouge">theme: theme_name</code> to the <code class="highlighter-rouge">_config.yml</code> and adding the gem to your Gemfile then bundle install to update dependencies.</p>
+
+<p>Another option is to branch the repo of a theme, add the _site, _includes, _sass/, assets/ and scripts/ to your Jekyll branch, although I haven’t tested this.</p>
+
+<h2 id="4-enabling-google-analytics">4. Enabling google analytics</h2>
+<p>add <code class="highlighter-rouge">google_analytics: &lt;YOUR ANALYTICS CODE&gt;</code> to your <code class="highlighter-rouge">_config.yml</code> file.</p>
+
+<h2 id="6-adding-a-custom-domain">6. Adding a custom domain</h2>
+<p>I’m using google domains with a CNAME record which forwards joshcarp.com to joshcarp.github.io. 
+To enable this on the github pages I made a file called CNAME on the <code class="highlighter-rouge">master</code> branch with <code class="highlighter-rouge">joshcarp.com</code> in it, that way github will allow connections from <code class="highlighter-rouge">joshcarp.com</code></p>
+
+<h2 id="5-problems">5. Problems</h2>
+<ul>
+  <li>After installing new plugins Travis was failing:
+<code class="highlighter-rouge">The command "bundle exec jekyll build" exited with 1.</code>
+<br />to fix this we need to update the Gemfile by appending the plugin gems <br />
+<code class="highlighter-rouge">gem 'jekyll-sitemap'
+ gem 'jekyll-seo-tag'</code>
+<br />
+Then the Gems need to be installed with:
+<code class="highlighter-rouge">bundle install &amp;&amp; bundle update</code></li>
+</ul>
+
+<h1 id="apache-virtual-hosts">Apache Virtual hosts</h1>
+<p>I still want some subdomains to point at my home network, and with that, I want to be able to host multiple websites on the same domain. 
+Apache virtual hosts are a way to “redirect” based on where traffic is coming from. 
+In my case I have a <code class="highlighter-rouge">go present</code> presentation running on port 8080 of my server, although I want to be able to access this at the web address gophercon.joshcarp.com <br /></p>
+
+<p>DNS records fundamentally don’t allow port redirects, so virtual hosts are a way around this. 
+Steps:</p>
+<ol>
+  <li>Have a CNAME record pointing <code class="highlighter-rouge">gophercon.joshcarp.com</code> to my home IP address.</li>
+  <li>Have apache running on port 80</li>
+  <li>in <code class="highlighter-rouge">/etc/apache2/sites-avaliable</code> add a file <code class="highlighter-rouge">gophercon.joshcarp.com.conf</code> and add
+```</li>
+</ol>
+<p>&lt;VirtualHost *:80&gt; 
+  ProxyPreserveHost On
+  ProxyRequests Off
+  ServerName gophercon.joshcarp.com
+  ProxyPass  / http://localhost:8080/
+&lt;/VirtualHost&gt;</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4. enable the site with `sudo a2ensite gophercon.joshcarp.com.conf`
+- This will redirect incoming traffic from gophercon.joshcarp.com to port 8080 on localhost. 
+
+If I want to set a document root and serve files from there, I can with the following config
+</code></pre></div></div>
+<p>&lt;VirtualHost *:80&gt;
+    ProxyPreserveHost On
+     ProxyRequests Off
+     DocumentRoot “/var/www/html”
+     ServerName home.joshcarp.com
+   &lt;/VirtualHost&gt;
+```</p>
+
+<p>And this will serve all the documents in “/var/www/html” when incoming traffic is encountered from home.joshcarp.com</p>
+
+<p>References:
+<a href="http://dev.im-bot.com/jekyll-travis-github/">http://dev.im-bot.com/jekyll-travis-github/</a></p>
+
+
+  </div><a class="u-url" href="/posts/Github-And-Jekyll/" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Joshua Carpeggiani</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Joshua Carpeggiani</li><li><a class="u-email" href="mailto:Josh@joshcarp.com">Josh@joshcarp.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/joshcarp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">joshcarp</span></a></li><li><a href="https://www.twitter.com/mrjoshcarp"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">mrjoshcarp</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>Still don&#39;t know...</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
