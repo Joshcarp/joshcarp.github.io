@@ -1,1 +1,91 @@
-<p>A whole bunch of stuff about the go course and links and all to github repos and all</p>
+<p>The tutorial which helped me the most has been this:
+<a href="http://dev.im-bot.com/jekyll-travis-github/">http://dev.im-bot.com/jekyll-travis-github/</a>
+Although When I was following there still were a few things which were unclear. So here we are…</p>
+<h2 id="1-getting-a-skeleton-jekyll-website-up">1. Getting a skeleton Jekyll website up</h2>
+
+<p>I discovered that someone already made a template repo: <a href="https://github.com/barryclark/jekyll-now">https://github.com/barryclark/jekyll-now</a><br />
+Or fork from <a href="https://github.com/joshcarp/joshcarp.github.io">https://github.com/joshcarp/joshcarp.github.io</a><br /></p>
+
+<p>I guess it’s advised to get Jekyll running locally, even though the end game is to have it all deployable through travis; Sometimes you’ll install a plugin and want to test it locally/ need to install another Gem or something. 
+<br /><a href="https://jekyllrb.com/docs/">https://jekyllrb.com/docs/</a></p>
+
+<h2 id="2-travis-build-to-master">2. Travis build to master</h2>
+<p>Secondly You’ll need a github access token with repo push access only and travis set up in order for it to push to master.</p>
+
+<p>After you’ve got your access key you want to install the travis gem and hash it then add replace yours in the <code class="highlighter-rouge">.travis.yml</code> file in the repo. 
+Oh, don’t forget to enable travis builds on the <code class="highlighter-rouge">jekyll</code> branch</p>
+
+<h2 id="3-customising-jekyll">3. Customising Jekyll</h2>
+<p>You can customise the theme your website uses by adding <code class="highlighter-rouge">theme: theme_name</code> to the <code class="highlighter-rouge">_config.yml</code> and adding the gem to your Gemfile then bundle install to update dependencies.</p>
+
+<p>Another option is to branch the repo of a theme, add the _site, _includes, _sass/, assets/ and scripts/ to your Jekyll branch, although I haven’t tested this.</p>
+
+<h2 id="4-enabling-google-analytics">4. Enabling google analytics</h2>
+<p>add <code class="highlighter-rouge">google_analytics: &lt;YOUR ANALYTICS CODE&gt;</code> to your <code class="highlighter-rouge">_config.yml</code> file.</p>
+
+<h2 id="6-adding-a-custom-domain">6. Adding a custom domain</h2>
+<p>I’m using google domains with a DNS CNAME record which forwards joshcarp.com to joshcarp.github.io. 
+To enable this on the github pages I made a file called CNAME on the <code class="highlighter-rouge">jekyll</code> branch in the root directory and in <code class="highlighter-rouge">_site</code> and also one in the root of master with <code class="highlighter-rouge">joshcarp.com</code> in it, that way github will allow incoming connections from <code class="highlighter-rouge">joshcarp.com</code></p>
+
+<h2 id="7-custom-permalinks">7. custom permalinks</h2>
+<p>A permalink is how your pages show up in the url. To set a custom one you can add a link in <code class="highlighter-rouge">_config.yml</code>:<br />
+<code class="highlighter-rouge">permalink: /:title/</code>
+some other conventions include using dates, although I don’t think that is necessary at this point.</p>
+
+<h2 id="5-problems">5. Problems</h2>
+<ul>
+  <li>
+    <p>After installing new plugins Travis was failing:
+<code class="highlighter-rouge">The command "bundle exec jekyll build" exited with 1.</code>
+<br />to fix this we need to update the Gemfile by appending the plugin gems <br />
+<code class="highlighter-rouge">gem 'jekyll-sitemap'
+ gem 'jekyll-seo-tag'</code>
+<br />
+Then the Gems need to be installed with:
+<code class="highlighter-rouge">bundle install &amp;&amp; bundle update</code></p>
+  </li>
+  <li>
+    <p>If Google analytics isn’t working, make sure that you’ve set the  <code class="highlighter-rouge">JEKYLL_ENV=production</code> as an environment variable in travisci</p>
+  </li>
+</ul>
+
+<h1 id="apache-virtual-hosts">Apache Virtual hosts</h1>
+<p>I still want some subdomains to point at my home network, and with that, I want to be able to host multiple websites on the same domain. 
+Apache virtual hosts are a way to “redirect” based on where traffic is coming from. 
+In my case I have a <code class="highlighter-rouge">go present</code> presentation running on port 8080 of my server, although I want to be able to access this at the web address gophercon.joshcarp.com <br /></p>
+
+<p>DNS records fundamentally don’t allow port redirects, so virtual hosts are a way around this. 
+Steps:</p>
+<ol>
+  <li>Have a CNAME record pointing <code class="highlighter-rouge">gophercon.joshcarp.com</code> to my home IP address.</li>
+  <li>Have apache running on port 80</li>
+  <li>in <code class="highlighter-rouge">/etc/apache2/sites-avaliable</code> add a file <code class="highlighter-rouge">gophercon.joshcarp.com.conf</code> and add</li>
+</ol>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;VirtualHost <span class="k">*</span>:80&gt; 
+  ProxyPreserveHost On
+  ProxyRequests Off
+  ServerName gophercon.joshcarp.com
+  ProxyPass  / http://localhost:8080/
+&lt;/VirtualHost&gt; 
+</code></pre></div></div>
+<ol>
+  <li>enable the site with <code class="highlighter-rouge">sudo a2ensite gophercon.joshcarp.com.conf</code><br />
+This will redirect incoming traffic from gophercon.joshcarp.com to port 8080 on localhost.</li>
+</ol>
+
+<p>I can also use this to set root directories for serving websites. 
+If I want to set a document root and serve files from there, I can with the following config</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;VirtualHost <span class="k">*</span>:80&gt;
+    ProxyPreserveHost On
+     ProxyRequests Off
+     DocumentRoot <span class="s2">"/var/www/html"</span>
+     ServerName home.joshcarp.com
+   &lt;/VirtualHost&gt;
+</code></pre></div></div>
+
+<p>And this will serve all the documents in “/var/www/html” when incoming traffic is encountered from home.joshcarp.com, although I want to keep all web related stuff on github pages at the moment.</p>
+
+<p>References:
+<a href="http://dev.im-bot.com/jekyll-travis-github/">http://dev.im-bot.com/jekyll-travis-github/</a></p>
+
