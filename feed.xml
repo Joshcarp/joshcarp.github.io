@@ -5,13 +5,13 @@
     <description>Still don't know...</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 15 Jul 2019 13:24:47 +0000</pubDate>
-    <lastBuildDate>Mon, 15 Jul 2019 13:24:47 +0000</lastBuildDate>
+    <pubDate>Mon, 15 Jul 2019 13:30:59 +0000</pubDate>
+    <lastBuildDate>Mon, 15 Jul 2019 13:30:59 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
     
       <item>
-        <title></title>
+        <title>Github Pages, Jekyll, Travis CI</title>
         <description>&lt;p&gt;The tutorial which helped me the most has been this:
 &lt;a href=&quot;http://dev.im-bot.com/jekyll-travis-github/&quot;&gt;http://dev.im-bot.com/jekyll-travis-github/&lt;/a&gt;
 Although When I was following there still were a few things which were unclear. So here we are…&lt;/p&gt;
@@ -104,10 +104,12 @@ If I want to set a document root and serve files from there, I can with the foll
 &lt;a href=&quot;http://dev.im-bot.com/jekyll-travis-github/&quot;&gt;http://dev.im-bot.com/jekyll-travis-github/&lt;/a&gt;&lt;/p&gt;
 
 </description>
-        <pubDate>Mon, 15 Jul 2019 13:24:47 +0000</pubDate>
-        <link>/posts/2019-07-15-Go-Course/</link>
-        <guid isPermaLink="true">/posts/2019-07-15-Go-Course/</guid>
+        <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+        <link>/posts/Go-Course/</link>
+        <guid isPermaLink="true">/posts/Go-Course/</guid>
         
+        
+        <category>posts</category>
         
       </item>
     
