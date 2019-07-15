@@ -5,8 +5,6 @@
     <description>Still don't know...</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 15 Jul 2019 12:23:57 +0000</pubDate>
-    <lastBuildDate>Mon, 15 Jul 2019 12:23:57 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
     
@@ -14,7 +12,7 @@
         <title></title>
         <description>&lt;p&gt;A whole bunch of stuff about the go course and links and all to github repos and all&lt;/p&gt;
 </description>
-        <pubDate>Mon, 15 Jul 2019 12:23:57 +0000</pubDate>
+        <pubDate>Mon, 15 Jul 2019 12:28:27 +0000</pubDate>
         <link>/posts/2019-07-15-Go-Course/</link>
         <guid isPermaLink="true">/posts/2019-07-15-Go-Course/</guid>
         
