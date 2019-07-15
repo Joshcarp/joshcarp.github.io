@@ -96,27 +96,33 @@ Steps:</p>
 <ol>
   <li>Have a CNAME record pointing <code class="highlighter-rouge">gophercon.joshcarp.com</code> to my home IP address.</li>
   <li>Have apache running on port 80</li>
-  <li>in <code class="highlighter-rouge">/etc/apache2/sites-avaliable</code> add a file <code class="highlighter-rouge">gophercon.joshcarp.com.conf</code> and add
-```</li>
+  <li>in <code class="highlighter-rouge">/etc/apache2/sites-avaliable</code> add a file <code class="highlighter-rouge">gophercon.joshcarp.com.conf</code> and add</li>
 </ol>
-<p>&lt;VirtualHost *:80&gt; 
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;VirtualHost <span class="k">*</span>:80&gt; 
   ProxyPreserveHost On
   ProxyRequests Off
   ServerName gophercon.joshcarp.com
   ProxyPass  / http://localhost:8080/
-&lt;/VirtualHost&gt;</p>
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4. enable the site with `sudo a2ensite gophercon.joshcarp.com.conf`
-- This will redirect incoming traffic from gophercon.joshcarp.com to port 8080 on localhost. 
-
-If I want to set a document root and serve files from there, I can with the following config
+&lt;/VirtualHost&gt; 
 </code></pre></div></div>
-<p>&lt;VirtualHost *:80&gt;
+
+<ol>
+  <li>enable the site with <code class="highlighter-rouge">sudo a2ensite gophercon.joshcarp.com.conf</code>
+    <ul>
+      <li>This will redirect incoming traffic from gophercon.joshcarp.com to port 8080 on localhost.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>If I want to set a document root and serve files from there, I can with the following config</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;VirtualHost <span class="k">*</span>:80&gt;
     ProxyPreserveHost On
      ProxyRequests Off
-     DocumentRoot “/var/www/html”
+     DocumentRoot <span class="s2">"/var/www/html"</span>
      ServerName home.joshcarp.com
    &lt;/VirtualHost&gt;
-```</p>
+</code></pre></div></div>
 
 <p>And this will serve all the documents in “/var/www/html” when incoming traffic is encountered from home.joshcarp.com</p>
 

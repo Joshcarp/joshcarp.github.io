@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-07-15T04:42:26+00:00</updated><id>/feed.xml</id><title type="html">Joshua Carpeggiani</title><subtitle>Still don't know...</subtitle><entry><title type="html">Github Pages, Jekyll, Travis CI</title><link href="/posts/Github-And-Jekyll/" rel="alternate" type="text/html" title="Github Pages, Jekyll, Travis CI" /><published>2019-07-15T00:00:00+00:00</published><updated>2019-07-15T00:00:00+00:00</updated><id>/posts/Github-And-Jekyll</id><content type="html" xml:base="/posts/Github-And-Jekyll/">&lt;p&gt;References:
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2019-07-15T04:45:44+00:00</updated><id>/feed.xml</id><title type="html">Joshua Carpeggiani</title><subtitle>Still don't know...</subtitle><entry><title type="html">Github Pages, Jekyll, Travis CI</title><link href="/posts/Github-And-Jekyll/" rel="alternate" type="text/html" title="Github Pages, Jekyll, Travis CI" /><published>2019-07-15T00:00:00+00:00</published><updated>2019-07-15T00:00:00+00:00</updated><id>/posts/Github-And-Jekyll</id><content type="html" xml:base="/posts/Github-And-Jekyll/">&lt;p&gt;References:
 &lt;a href=&quot;http://dev.im-bot.com/jekyll-travis-github/&quot;&gt;http://dev.im-bot.com/jekyll-travis-github/&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;1-getting-a-skeleton-jekyll-website-up&quot;&gt;1. Getting a skeleton Jekyll website up&lt;/h2&gt;
@@ -49,27 +49,33 @@ Steps:&lt;/p&gt;
 &lt;ol&gt;
   &lt;li&gt;Have a CNAME record pointing &lt;code class=&quot;highlighter-rouge&quot;&gt;gophercon.joshcarp.com&lt;/code&gt; to my home IP address.&lt;/li&gt;
   &lt;li&gt;Have apache running on port 80&lt;/li&gt;
-  &lt;li&gt;in &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/apache2/sites-avaliable&lt;/code&gt; add a file &lt;code class=&quot;highlighter-rouge&quot;&gt;gophercon.joshcarp.com.conf&lt;/code&gt; and add
-```&lt;/li&gt;
+  &lt;li&gt;in &lt;code class=&quot;highlighter-rouge&quot;&gt;/etc/apache2/sites-avaliable&lt;/code&gt; add a file &lt;code class=&quot;highlighter-rouge&quot;&gt;gophercon.joshcarp.com.conf&lt;/code&gt; and add&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&amp;lt;VirtualHost *:80&amp;gt; 
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;VirtualHost &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;:80&amp;gt; 
   ProxyPreserveHost On
   ProxyRequests Off
   ServerName gophercon.joshcarp.com
   ProxyPass  / http://localhost:8080/
-&amp;lt;/VirtualHost&amp;gt;&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;4. enable the site with `sudo a2ensite gophercon.joshcarp.com.conf`
-- This will redirect incoming traffic from gophercon.joshcarp.com to port 8080 on localhost. 
-
-If I want to set a document root and serve files from there, I can with the following config
+&amp;lt;/VirtualHost&amp;gt; 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;&amp;lt;VirtualHost *:80&amp;gt;
+
+&lt;ol&gt;
+  &lt;li&gt;enable the site with &lt;code class=&quot;highlighter-rouge&quot;&gt;sudo a2ensite gophercon.joshcarp.com.conf&lt;/code&gt;
+    &lt;ul&gt;
+      &lt;li&gt;This will redirect incoming traffic from gophercon.joshcarp.com to port 8080 on localhost.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If I want to set a document root and serve files from there, I can with the following config&lt;/p&gt;
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;VirtualHost &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;:80&amp;gt;
     ProxyPreserveHost On
      ProxyRequests Off
-     DocumentRoot “/var/www/html”
+     DocumentRoot &lt;span class=&quot;s2&quot;&gt;&quot;/var/www/html&quot;&lt;/span&gt;
      ServerName home.joshcarp.com
    &amp;lt;/VirtualHost&amp;gt;
-```&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;And this will serve all the documents in “/var/www/html” when incoming traffic is encountered from home.joshcarp.com&lt;/p&gt;
 
