@@ -5,32 +5,18 @@
     <description>Still don't know...</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 15 Jul 2019 12:13:28 +0000</pubDate>
-    <lastBuildDate>Mon, 15 Jul 2019 12:13:28 +0000</lastBuildDate>
+    <pubDate>Mon, 15 Jul 2019 12:22:21 +0000</pubDate>
+    <lastBuildDate>Mon, 15 Jul 2019 12:22:21 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
     
       <item>
-        <title></title>
-        <description>&lt;p&gt;So I’ve been working on a project and all:
-&amp;lt;github.com/anz-bank/decimal&amp;gt;&lt;/p&gt;
-
-&lt;p&gt;Floating point arithmetic: Link and snippet to blog&lt;/p&gt;
-
-&lt;p&gt;Failure of floating point numbers&lt;/p&gt;
-
-&lt;p&gt;How Decimal numbers fix them&lt;/p&gt;
-
-&lt;p&gt;Arbirtrary numbers and Fixed precision numbers: Integer speed tests&lt;/p&gt;
-
-&lt;p&gt;So this means that a fixed size decimal is faster? ….&lt;/p&gt;
-
-&lt;p&gt;Link to presentation and all &lt;gophercon.joshcarp.com&gt;&lt;/gophercon.joshcarp.com&gt;&lt;/p&gt;
-
+        <title>Go Course</title>
+        <description>&lt;p&gt;A whole bunch of stuff about the go course and links and all to github repos and all&lt;/p&gt;
 </description>
-        <pubDate>Mon, 15 Jul 2019 12:12:25 +0000</pubDate>
-        <link>/posts/decimal/</link>
-        <guid isPermaLink="true">/posts/decimal/</guid>
+        <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
+        <link>/posts/Go-Course/</link>
+        <guid isPermaLink="true">/posts/Go-Course/</guid>
         
         
       </item>
@@ -135,17 +121,6 @@ If I want to set a document root and serve files from there, I can with the foll
         
         
         <category>posts</category>
-        
-      </item>
-    
-      <item>
-        <title>Go Course</title>
-        <description>&lt;p&gt;A whole bunch of stuff about the go course and links and all to github repos and all&lt;/p&gt;
-</description>
-        <pubDate>Mon, 15 Jul 2019 00:00:00 +0000</pubDate>
-        <link>/posts/Go-Course/</link>
-        <guid isPermaLink="true">/posts/Go-Course/</guid>
-        
         
       </item>
     
