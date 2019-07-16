@@ -5,8 +5,8 @@
     <description>Still don't know...</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 15 Jul 2019 13:39:59 +0000</pubDate>
-    <lastBuildDate>Mon, 15 Jul 2019 13:39:59 +0000</lastBuildDate>
+    <pubDate>Tue, 16 Jul 2019 04:56:54 +0000</pubDate>
+    <lastBuildDate>Tue, 16 Jul 2019 04:56:54 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
     
@@ -43,7 +43,8 @@ To enable this on the github pages I made a file called CNAME on the &lt;code cl
 
 &lt;h2 id=&quot;7-custom-permalinks&quot;&gt;7. custom permalinks&lt;/h2&gt;
 &lt;p&gt;A permalink is how your pages show up in the url. To set a custom one you can add a link in &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;:&lt;br /&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;permalink: /:title/&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;permalink: /:collection/:title/&lt;/code&gt;
+and the default collection for posts is &lt;code class=&quot;highlighter-rouge&quot;&gt;/posts&lt;/code&gt; as can be seen in the url
 some other conventions include using dates, although I don’t think that is necessary at this point.&lt;/p&gt;
 
 &lt;h2 id=&quot;5-problems&quot;&gt;5. Problems&lt;/h2&gt;
