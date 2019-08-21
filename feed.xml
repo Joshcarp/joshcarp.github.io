@@ -5,14 +5,15 @@
     <description>Still don't know...</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 02 Aug 2019 04:31:28 +0000</pubDate>
-    <lastBuildDate>Fri, 02 Aug 2019 04:31:28 +0000</lastBuildDate>
+    <pubDate>Wed, 21 Aug 2019 10:42:19 +0000</pubDate>
+    <lastBuildDate>Wed, 21 Aug 2019 10:42:19 +0000</lastBuildDate>
     <generator>Jekyll v3.8.6</generator>
     
     
       <item>
         <title>Github Pages, Jekyll, Travis CI</title>
-        <description>&lt;p&gt;The tutorial which helped me the most has been this:
+        <description>&lt;p&gt;Hello
+The tutorial which helped me the most has been this:
 &lt;a href=&quot;http://dev.im-bot.com/jekyll-travis-github/&quot;&gt;http://dev.im-bot.com/jekyll-travis-github/&lt;/a&gt;
 Although When I was following there still were a few things which were unclear. So here we are…&lt;/p&gt;
 &lt;h2 id=&quot;1-getting-a-skeleton-jekyll-website-up&quot;&gt;1. Getting a skeleton Jekyll website up&lt;/h2&gt;
