@@ -10,24 +10,45 @@ clock0 {
 function startTime() {
   var today = new Date();
   var h = today.getHours();
-  var m = today.getTimezoneOffset()+ today.getMinutes();
+  var m = today.getMinutes() + today.getTimezoneOffset();;
   var s = today.getSeconds();
-  var beats = (s + (m * 60) + ((h+1 )* 3600)) / 86.4;
-  beats = Math.round(beats);
+  var beats = (s + (m * 60) + (h * 3600)) / 86.4;
+  var time_ticks = checkTime(beats);
+  beats = time_ticks[0];
+  var numticks = time_ticks[1];
   
 
   document.getElementById('txt').innerHTML =
   "@"+ beats;
+
+  document.getElementById('upper').innerHTML =
+  "-".repeat(numticks);
   var t = setTimeout(startTime, 500);
+
+  document.getElementById('lower').innerHTML =
+  "-".repeat(numticks);
+  var t = setTimeout(startTime, 500);
+}
+
+function checkTime(i) {
+    var truncated = Math.floor(i);
+    var frac = i - truncated;
+    var numticks = Math.floor(frac*10);
+    
+    return [truncated, numticks];
 }
 
 </script>
 </head>
 
 <body onload="startTime()">
-<clock0 style="font-size: 273px; line-height: 227px; text-align:right;" id="txt"></h1>
 
-}
+<clock0 style="font-size: 200px; line-height: 220px; text-align:right;" id="upper">----------</clock0>
+<br></br>
+<clock0 style="font-size: 273px; line-height: 227px; text-align:right;" id="txt"></clock0>
+<br></br>
+<clock0 style="font-size: 200px; line-height: 220px; text-align:right;" id="lower">----------</clock0>
+
 
 
 </body>
