@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+clock0 {
+    font-weight: bold;
+}
+</style>
+<script>
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getTimezoneOffset()+ today.getMinutes();
+  var s = today.getSeconds();
+  var beats = (s + (m * 60) + ((h+1 )* 3600)) / 86.4;
+  beats = Math.round(beats);
+  
+
+  document.getElementById('txt').innerHTML =
+  "@"+ beats;
+  var t = setTimeout(startTime, 500);
+}
+
+</script>
+</head>
+
+<body onload="startTime()">
+<clock0 style="font-size: 273px; line-height: 227px; text-align:right;" id="txt"></h1>
+
+}
+
+
+</body>
+</html>
