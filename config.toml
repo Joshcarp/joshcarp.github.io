@@ -1,0 +1,61 @@
+googleAnalytics = "UA-41605347-1"
+baseurl = "http://joshcarp.com/"
+title = "Joshua Carpeggiani"
+theme = "hugo-coder"
+languagecode = "en"
+defaultcontentlanguage = "en"
+
+paginate = 20
+canonifyurls = true
+
+pygmentsstyle = "bw"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = true
+
+disqusShortname = "yourdiscussshortname"
+
+[params]
+    author = "Joshua Carpeggiani"
+    info = "Software engineer and CS student"
+    description = "Joshua Carpeggiani's personal website"
+    keywords = "blog,developer,personal"
+    avatarurl = "images/avatar.jpg"
+
+    favicon_32 = "/img/favicon-32x32.png"
+    favicon_16 = "/img/favicon-16x16.png"
+
+
+    hidecredits = true
+    hidecopyright = true
+
+    rtl = false
+
+    math = true
+    custom_css = ["css/custom.css"]
+
+# Social links
+[[params.social]]
+    name = "Github"
+    icon = "fab fa-github"
+    weight = 1
+    url = "https://github.com/joshcarp/"
+[[params.social]]
+    name = "Email"
+    icon = "fa fa-envelope"
+    weight = 2
+    url = "mailto:josh@joshcarp.com"
+[[params.social]]
+    name = "LinkedIn"
+    icon = "fab fa-linkedin"
+    weight = 3
+    url = "https://www.linkedin.com/in/joshcarp/"
+
+# Menu links
+[[menu.main]]
+    name = "Blog"
+    weight = 1
+    url  = "/posts/"
+[[menu.main]]
+    name = "About"
+    weight = 2
+    url = "/about/"
