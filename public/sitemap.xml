@@ -3,36 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://joshcarp.com/about/</loc>
+    <loc>http://www.joshcarp.com/about/</loc>
     <lastmod>2019-11-05T19:22:47+11:00</lastmod>
   </url>
   
   <url>
-    <loc>http://joshcarp.com/</loc>
+    <loc>http://www.joshcarp.com/</loc>
     <lastmod>2019-11-05T19:22:47+11:00</lastmod>
   </url>
   
   <url>
-    <loc>http://joshcarp.com/posts/2019-07-15-github-and-jekyll/</loc>
+    <loc>http://www.joshcarp.com/posts/2019-07-15-github-and-jekyll/</loc>
     <lastmod>2019-11-05T19:14:57+11:00</lastmod>
   </url>
   
   <url>
-    <loc>http://joshcarp.com/posts/my-first-post/</loc>
+    <loc>http://www.joshcarp.com/posts/</loc>
     <lastmod>2019-11-05T19:14:57+11:00</lastmod>
   </url>
   
   <url>
-    <loc>http://joshcarp.com/posts/</loc>
-    <lastmod>2019-11-05T19:14:57+11:00</lastmod>
+    <loc>http://www.joshcarp.com/categories/</loc>
   </url>
   
   <url>
-    <loc>http://joshcarp.com/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>http://joshcarp.com/tags/</loc>
+    <loc>http://www.joshcarp.com/tags/</loc>
   </url>
   
 </urlset>
