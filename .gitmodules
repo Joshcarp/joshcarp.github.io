@@ -11,3 +11,7 @@
 	path = public
 	url = https://github.com/joshcarp/joshcarp.github.io.git
 	branch = master
+[submodule "public/joshcarp.github.io"]
+	path = public/joshcarp.github.io
+	url = https://github.com/joshcarp/joshcarp.github.io
+	branch = master
