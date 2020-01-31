@@ -1,7 +1,6 @@
 ---
 title: "About"
 date: 2019-11-05T19:22:47+11:00
-draft: true
 ---
 
 I'm a student at The University of Melbourne and a software engineer at ANZ in Melbourne.
