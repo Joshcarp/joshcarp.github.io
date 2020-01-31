@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Joshua Carpeggiani</title>
+    <link>http://www.joshcarp.com/posts/</link>
+    <description>Recent content in Posts on Joshua Carpeggiani</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 05 Nov 2019 19:14:57 +1100</lastBuildDate>
+    
+	<atom:link href="http://www.joshcarp.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Jekyll</title>
+      <link>http://www.joshcarp.com/posts/2019-07-15-github-and-jekyll/</link>
+      <pubDate>Tue, 05 Nov 2019 19:14:57 +1100</pubDate>
+      
+      <guid>http://www.joshcarp.com/posts/2019-07-15-github-and-jekyll/</guid>
+      <description>Hello The tutorial which helped me the most has been this: http://dev.im-bot.com/jekyll-travis-github/ Although When I was following there still were a few things which were unclear. So here we are&amp;hellip;
+1. Getting a skeleton Jekyll website up I discovered that someone already made a template repo: https://github.com/barryclark/jekyll-nowOr fork from https://github.com/joshcarp/joshcarp.github.ioI guess it&amp;rsquo;s advised to get Jekyll running locally, even though the end game is to have it all deployable through travis; Sometimes you&amp;rsquo;ll install a plugin and want to test it locally/ need to install another Gem or something.</description>
+    </item>
+    
+  </channel>
+</rss>
