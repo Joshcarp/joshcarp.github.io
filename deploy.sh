@@ -5,11 +5,12 @@ set -e
 
 printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
 
+cd _source
 # Build the project.
 hugo -t hugo-coder # if using a theme, replace with `hugo -t <YOURTHEME>`
 
 # Go To Public folder
-mv public/* docs/
+mv public/* ../
 
 # Add changes to git.
 git add .
