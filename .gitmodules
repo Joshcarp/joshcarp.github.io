@@ -1,7 +1,0 @@
-[submodule "themes/hugo-coder"]
-	path = themes/hugo-coder
-	url = https://github.com/luizdepra/hugo-coder.git
-[submodule "public"]
-	path = public
-	url = https://github.com/joshcarp/joshcarp.github.io.git
-	branch = master
