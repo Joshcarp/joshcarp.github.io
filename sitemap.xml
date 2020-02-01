@@ -27,7 +27,15 @@
   </url>
   
   <url>
+    <loc>https://www.joshcarp.com/talks/foo/</loc>
+  </url>
+  
+  <url>
     <loc>https://www.joshcarp.com/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.joshcarp.com/talks/</loc>
   </url>
   
 </urlset>

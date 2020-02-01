@@ -10,7 +10,7 @@ cd _source
 hugo -t hugo-coder # if using a theme, replace with `hugo -t <YOURTHEME>`
 
 # Go To Public folder
-mv public/* ../
+mv -f public/* ../
 
 # Add changes to git.
 git add .
