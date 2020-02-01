@@ -8,7 +8,7 @@ go run deletefiles.go
 
 cd _source
 # Build the project.
-hugo # if using a theme, replace with `hugo -t <YOURTHEME>`
+hugo -t hugo-coder # if using a theme, replace with `hugo -t <YOURTHEME>`
 
 
 
