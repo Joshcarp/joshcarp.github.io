@@ -12,6 +12,11 @@ pygmentsstyle = "bw"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
+[outputFormats.Reveal]
+baseName = "index"
+mediaType = "text/html"
+isHTML = true
+
 [params]
     author = "Joshua Carpeggiani"
     info = "Software engineer and CS student"
@@ -57,3 +62,7 @@ pygmentscodefencesguesssyntax = true
     name = "About"
     weight = 2
     url = "/about/"
+[[menu.main]]
+    name = "Talks"
+    weight = 3
+    url = "/talks/"
