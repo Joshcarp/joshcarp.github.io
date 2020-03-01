@@ -10,23 +10,30 @@
     <meta name="keywords" content="blog,developer,personal">
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Joshua Carpeggiani"/>
-<meta name="twitter:description" content="Joshua Carpeggiani&#39;s personal website"/>
+<meta name="twitter:title" content="Making a playground with wasm"/>
+<meta name="twitter:description" content="GOOS=js GOARCH=wasm go1.12.4 build -o static/main.wasm main.go  cp /usr/local/go/misc/wasm/wasm_exec.js . This needs to be from the same go installation that compiled the go wasm file
+now to test, we can use a node command
+node wasm_exec.js wasm/arrai eval &lsquo;41 &#43; 1&rsquo;"/>
 
-    <meta property="og:title" content="Joshua Carpeggiani" />
-<meta property="og:description" content="Joshua Carpeggiani&#39;s personal website" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.joshcarp.com/" />
-<meta property="og:updated_time" content="2020-02-05T00:00:00+00:00" />
+    <meta property="og:title" content="Making a playground with wasm" />
+<meta property="og:description" content="GOOS=js GOARCH=wasm go1.12.4 build -o static/main.wasm main.go  cp /usr/local/go/misc/wasm/wasm_exec.js . This needs to be from the same go installation that compiled the go wasm file
+now to test, we can use a node command
+node wasm_exec.js wasm/arrai eval &lsquo;41 &#43; 1&rsquo;" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.joshcarp.com/posts/playground_with_wam/" />
+<meta property="article:published_time" content="2020-02-05T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-02-05T00:00:00+00:00" />
 
 
     
-      <base href="https://www.joshcarp.com/">
+      <base href="https://www.joshcarp.com/posts/playground_with_wam/">
     
-    <title>Joshua Carpeggiani</title>
+    <title>
+  Making a playground with wasm · Joshua Carpeggiani
+</title>
 
     
-      <link rel="canonical" href="https://www.joshcarp.com/">
+      <link rel="canonical" href="https://www.joshcarp.com/posts/playground_with_wam/">
     
 
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather:300,700%7CSource+Code+Pro:400,700" rel="stylesheet">
@@ -54,7 +61,6 @@
     <link rel="icon" type="image/png" href="https://www.joshcarp.com/img/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="https://www.joshcarp.com/img/favicon-16x16.png" sizes="16x16">
 
-    <link rel="alternate" type="application/rss+xml" href="https://www.joshcarp.com/index.xml" title="Joshua Carpeggiani" />
     <meta name="generator" content="Hugo 0.63.2" />
   </head>
 
@@ -95,45 +101,71 @@
 
       <div class="content">
         
-  <section class="container centered">
-  <div class="about">
-    
-      <div class="avatar"><img src="https://secure.gravatar.com/avatar/8f3ae66a1b3c1494de8971e428e9b6ae?s=500" alt="avatar"></div>
-    
-    <h1>Joshua Carpeggiani</h1>
-    <h2>Software engineer and CS student</h2>
-    
-    <ul>
-      
-        
-          <li>
-            <a href="https://github.com/joshcarp/" aria-label="Github"   >
-              <i class="fab fa-github" aria-hidden="true"></i>
-            </a>
-          </li>
-        
-      
-        
-          <li>
-            <a href="mailto:josh@joshcarp.com" aria-label="Email"   >
-              <i class="fa fa-envelope" aria-hidden="true"></i>
-            </a>
-          </li>
-        
-      
-        
-          <li>
-            <a href="https://www.linkedin.com/in/joshcarp/" aria-label="LinkedIn"   >
-              <i class="fab fa-linkedin" aria-hidden="true"></i>
-            </a>
-          </li>
-        
-      
-    </ul>
-    
-  </div>
-</section>
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">Making a playground with wasm</h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fas fa-calendar"></i>
+              <time datetime='2020-02-05T00:00:00Z'>
+                February 5, 2020
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fas fa-clock"></i>
+              1-minute read
+            </span>
+          </div>
+          
+          
+        </div>
+      </header>
 
+      <div>
+        
+        <ol>
+<li>GOOS=js GOARCH=wasm go1.12.4 build -o static/main.wasm main.go</li>
+</ol>
+<p>cp /usr/local/go/misc/wasm/wasm_exec.js .
+This needs to be from the same go installation that compiled the go wasm file</p>
+<p>now to test, we can use a node command</p>
+<p>node wasm_exec.js wasm/arrai eval &lsquo;41 + 1&rsquo;</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js" id="MathJax-script"></script>
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [
+          ['$', '$'], ['\\(', '\\)']
+        ],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    };
+  </script>
+  </section>
 
       </div>
 

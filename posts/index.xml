@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Joshua Carpeggiani</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 05 Nov 2019 19:14:57 +1100</lastBuildDate>
+    <lastBuildDate>Wed, 05 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.joshcarp.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Making a playground with wasm</title>
+      <link>https://www.joshcarp.com/posts/playground_with_wam/</link>
+      <pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.joshcarp.com/posts/playground_with_wam/</guid>
+      <description>GOOS=js GOARCH=wasm go1.12.4 build -o static/main.wasm main.go  cp /usr/local/go/misc/wasm/wasm_exec.js . This needs to be from the same go installation that compiled the go wasm file
+now to test, we can use a node command
+node wasm_exec.js wasm/arrai eval &amp;lsquo;41 + 1&amp;rsquo;</description>
+    </item>
     
     <item>
       <title>Jekyll</title>
