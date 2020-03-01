@@ -19,7 +19,7 @@ isHTML = true
 
 [params]
     author = "Joshua Carpeggiani"
-    info = "Software engineer and CS student"
+    info = "Software Engineer and CS student"
     description = "Joshua Carpeggiani's personal website"
     keywords = "blog,developer,personal"
     avatarurl = "https://secure.gravatar.com/avatar/8f3ae66a1b3c1494de8971e428e9b6ae?s=500"

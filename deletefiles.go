@@ -7,7 +7,7 @@ import (
 	"os/exec"
 )
 
-var keep = []string{"CNAME", "deploy.sh", "_source", ".git", "deletefiles.go"}
+var keep = []string{"CNAME", "deploy.sh", "_source", ".git", "deletefiles.go", "Makefile"}
 
 func main() {
 	files, err := ioutil.ReadDir("./")
