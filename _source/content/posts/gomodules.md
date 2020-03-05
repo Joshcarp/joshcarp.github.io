@@ -7,4 +7,4 @@ date: 2020-02-05
 
 2. go.sum database of hashes; goprivate telling go to go direct
 
-3. 
+3. Import paths; inside vs outside; everything is absolute
