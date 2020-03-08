@@ -98,3 +98,26 @@ I've always had in my mind that "go get always gets the latest commit"; so for a
 
 That brings us to another interesting hypothesis; what if I delete a tag:
 
+`git push --delete origin v0.0.2`
+
+now when we try and `go get` our repo:
+
+`go get -u -v github.com/joshcarp/go-get-test`
+
+-> `go: github.com/joshcarp/go-get-test upgrade => v0.0.2`
+but wait, didn't we delete this repo?
+maybe it's just getting it locally?
+-> `rm -rf <all the local go-get-test caches>` 
+
+but still:
+```
+go get -u -v github.com/joshcarp/go-get-test       
+go: github.com/joshcarp/go-get-test upgrade => v0.0.2
+> go-get-test
+After Tag
+```
+Hmm, so it seems like we can't downgrade the latest tagged version once it's on go.sum (this is a database of all the public hash sums of the code in order to be able to do effective version control)
+
+
+
+
