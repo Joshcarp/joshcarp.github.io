@@ -119,5 +119,10 @@ After Tag
 Hmm, so it seems like we can't downgrade the latest tagged version once it's on go.sum (this is a database of all the public hash sums of the code in order to be able to do effective version control)
 
 
+Maybe if we delete our latest git commit?
+```
+go get -u -v github.com/joshcarp/go-get-test
+go: github.com/joshcarp/go-get-test upgrade => v0.0.1
 
-
+```
+Aha! so it seems like `go.sum` is used to cache the latest tagged version against the commit id; in this case the v0.0.2 tag was cached, but because the commit didn't exist anymore it reverted to the latest tag that did exist (which was v0.0.1)
