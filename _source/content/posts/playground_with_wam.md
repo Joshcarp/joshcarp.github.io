@@ -1,6 +1,7 @@
 ---
 title: "Making a playground with wasm"
 date: 2020-02-05
+draft: true
 ---
 
 1. GOOS=js GOARCH=wasm go1.12.4 build -o static/main.wasm main.go

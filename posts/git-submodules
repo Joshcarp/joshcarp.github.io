@@ -2,6 +2,7 @@
 ---
 title: "Git submodules"
 date: 2020-02-05
+draft: true
 ---
 
 Problem: Trying to use git submodules
