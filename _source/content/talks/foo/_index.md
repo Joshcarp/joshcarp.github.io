@@ -1,6 +1,6 @@
 +++
 title = "Presentation Template"
-outputs = ["Reveal"]
+
 +++
 
 # Hello world!

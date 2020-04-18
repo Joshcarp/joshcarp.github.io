@@ -6,20 +6,21 @@
     <description>Recent content on Joshua Carpeggiani</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 05 Feb 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 05 Nov 2019 19:22:47 +1100</lastBuildDate>
     
 	<atom:link href="https://www.joshcarp.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Making a playground with wasm</title>
-      <link>https://www.joshcarp.com/posts/playground_with_wam/</link>
+      <title>Stuff I encountered when working with go modules</title>
+      <link>https://www.joshcarp.com/posts/gomodules/</link>
       <pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.joshcarp.com/posts/playground_with_wam/</guid>
-      <description>GOOS=js GOARCH=wasm go1.12.4 build -o static/main.wasm main.go  cp /usr/local/go/misc/wasm/wasm_exec.js . This needs to be from the same go installation that compiled the go wasm file
-now to test, we can use a node command
-node wasm_exec.js wasm/arrai eval &amp;lsquo;41 + 1&amp;rsquo;</description>
+      <guid>https://www.joshcarp.com/posts/gomodules/</guid>
+      <description>go get within a mod is different inside a module vs outside; local installation vs project go.mod
+  go.sum database of hashes; goprivate telling go to go direct
+  Import paths; inside vs outside; everything is absolute
+  So I was wondering what the deal with is with how go modules handle git tags, and what happens when a git repo doesn&amp;rsquo;t have any git releases/tags.</description>
     </item>
     
     <item>

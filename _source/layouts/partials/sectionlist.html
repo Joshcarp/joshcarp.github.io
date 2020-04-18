@@ -8,10 +8,10 @@
     {{- .Title -}}
   </h1>
   <ul>
-    {{ range .Sections }}
+    {{ range .Params.Presentations }}
     <li>
-      <span class="date">{{ .Date.Format (.Site.Params.dateFormat | default "January 2, 2006" ) }}</span>
-      <a class="title" href="{{ .Params.ExternalLink | default .RelPermalink }}">{{ .Title }}</a>
+      <span class="date">{{.Date}}</span>
+      <a class="title" href="{{ .Link | default .RelPermalink }}">{{ .Title }}</a>
     </li>
     {{ end }}
   </ul>
