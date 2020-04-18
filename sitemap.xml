@@ -3,44 +3,44 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.joshcarp.com/posts/</loc>
+    <loc>http://joshcarp.com/posts/</loc>
     <lastmod>2020-02-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.joshcarp.com/posts/gomodules/</loc>
+    <loc>http://joshcarp.com/posts/gomodules/</loc>
     <lastmod>2020-02-05T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.joshcarp.com/about/</loc>
+    <loc>http://joshcarp.com/about/</loc>
     <lastmod>2019-11-05T19:22:47+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.joshcarp.com/</loc>
+    <loc>http://joshcarp.com/</loc>
     <lastmod>2019-11-05T19:22:47+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.joshcarp.com/posts/2019-07-15-github-and-jekyll/</loc>
+    <loc>http://joshcarp.com/posts/2019-07-15-github-and-jekyll/</loc>
     <lastmod>2019-11-05T19:14:57+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.joshcarp.com/categories/</loc>
+    <loc>http://joshcarp.com/categories/</loc>
   </url>
   
   <url>
-    <loc>https://www.joshcarp.com/talks/foo/</loc>
+    <loc>http://joshcarp.com/talks/foo/</loc>
   </url>
   
   <url>
-    <loc>https://www.joshcarp.com/tags/</loc>
+    <loc>http://joshcarp.com/tags/</loc>
   </url>
   
   <url>
-    <loc>https://www.joshcarp.com/talks/</loc>
+    <loc>http://joshcarp.com/talks/</loc>
   </url>
   
 </urlset>
