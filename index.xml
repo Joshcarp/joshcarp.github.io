@@ -43,5 +43,16 @@ Contact me at josh@joshcarp.com LinkedinGitHub</description>
 1. Getting a skeleton Jekyll website up I discovered that someone already made a template repo: https://github.com/barryclark/jekyll-nowOr fork from https://github.com/joshcarp/joshcarp.github.ioI guess it&amp;rsquo;s advised to get Jekyll running locally, even though the end game is to have it all deployable through travis; Sometimes you&amp;rsquo;ll install a plugin and want to test it locally/ need to install another Gem or something.</description>
     </item>
     
+    <item>
+      <title>Go PR checklist</title>
+      <link>https://joshcarp.com/posts/go_pr_checklist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://joshcarp.com/posts/go_pr_checklist/</guid>
+      <description>Don&amp;rsquo;t stutter with naming exported identifiers  printer.Module() is better than
+printer.PrintModule() Try to return early  if !contition{ return } for _, e := range whatever{ if e == foo{ bar() } } is better than
+if contition{ for _, e := range whatever{ if e == foo{ return } } } Identify common repeated methods and replace with interfaces  func ApplicationAttribute(app *sysl.Application){ if description := app.GetAttrs()[&amp;#34;description&amp;#34;]; description !</description>
+    </item>
+    
   </channel>
 </rss>
