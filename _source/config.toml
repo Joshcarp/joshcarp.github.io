@@ -32,9 +32,7 @@ isHTML = true
     hidecopyright = true
 
     rtl = false
-
     math = true
-    custom_css = ["css/custom.css"]
 
 # Social links
 [[params.social]]
