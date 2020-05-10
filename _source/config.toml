@@ -24,8 +24,8 @@ isHTML = true
     keywords = "blog,developer,personal"
     avatarurl = "https://secure.gravatar.com/avatar/8f3ae66a1b3c1494de8971e428e9b6ae?s=500"
 
-    favicon_32 = "/img/favicon-32x32.png"
-    favicon_16 = "/img/favicon-16x16.png"
+    favicon_32 = "favicon.ico"
+    favicon_16 = "favicon.ico"
 
 
     hidecredits = true
