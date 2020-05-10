@@ -1,6 +1,6 @@
 ---
 title: "Go PR checklist"
-date: 2020-5-10
+date: 2020-05-10
 ---
 
 1. Don't stutter with naming exported identifiers
