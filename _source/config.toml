@@ -64,3 +64,7 @@ isHTML = true
     name = "Talks"
     weight = 3
     url = "/talks/"
+[[menu.main]]
+  name = "Projects"
+  weight = 3
+  url = "/projects/"
