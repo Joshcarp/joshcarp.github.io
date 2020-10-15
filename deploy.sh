@@ -2,6 +2,7 @@
 # # If a command fails then the deploy stops
 set -e
 mkdir -p docs
+cp CNAME docs
 cd _source
 # Build the project.
 hugo -t hugo-coder # if using a theme, replace with `hugo -t <YOURTHEME>`
