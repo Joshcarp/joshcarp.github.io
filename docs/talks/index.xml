@@ -5,10 +5,6 @@
     <link>https://joshcarp.com/talks/</link>
     <description>Recent content in Talks on Joshua Carpeggiani</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    
-	<atom:link href="https://joshcarp.com/talks/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language><atom:link href="https://joshcarp.com/talks/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

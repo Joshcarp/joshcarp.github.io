@@ -5,10 +5,6 @@
     <link>https://joshcarp.com/projects/</link>
     <description>Recent content in Projects on Joshua Carpeggiani</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    
-	<atom:link href="https://joshcarp.com/projects/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en</language><atom:link href="https://joshcarp.com/projects/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

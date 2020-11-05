@@ -6,11 +6,7 @@
     <description>Recent content on Joshua Carpeggiani</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 05 Nov 2019 19:22:47 +1100</lastBuildDate>
-    
-	<atom:link href="https://joshcarp.com/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 10 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://joshcarp.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go PR checklist</title>
       <link>https://joshcarp.com/posts/go_pr_checklist/</link>
