@@ -2,25 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://joshcarp.com/posts/go_pr_checklist/</loc>
-    <lastmod>2020-05-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://joshcarp.com/</loc>
-    <lastmod>2020-05-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://joshcarp.com/posts/</loc>
-    <lastmod>2020-05-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://joshcarp.com/posts/gomodules/</loc>
-    <lastmod>2020-02-05T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://joshcarp.com/about/</loc>
     <lastmod>2019-11-05T19:22:47+11:00</lastmod>
   </url><url>
-    <loc>https://joshcarp.com/posts/2019-07-15-github-and-jekyll/</loc>
-    <lastmod>2019-11-05T19:14:57+11:00</lastmod>
-  </url><url>
     <loc>https://joshcarp.com/categories/</loc>
+  </url><url>
+    <loc>https://joshcarp.com/</loc>
   </url><url>
     <loc>https://joshcarp.com/talks/foo/</loc>
   </url><url>
