@@ -6,49 +6,44 @@
     <description>Recent content on Joshua Carpeggiani</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 10 May 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://joshcarp.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 May 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://joshcarp.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go PR checklist</title>
       <link>https://joshcarp.com/posts/go_pr_checklist/</link>
       <pubDate>Sun, 10 May 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://joshcarp.com/posts/go_pr_checklist/</guid>
-      <description>Don&amp;rsquo;t stutter with naming exported identifiers  printer.Module() is better than
-printer.PrintModule() Try to return early  if !contition{ return } for _, e := range whatever{ if e == foo{ bar() } } is better than
-if contition{ for _, e := range whatever{ if e == foo{ return } } } Identify common repeated methods and replace with interfaces  func ApplicationAttribute(app *sysl.Application){ if description := app.GetAttrs()[&amp;#34;description&amp;#34;]; description !</description>
+      <description>Don&amp;rsquo;t stutter with naming exported identifiers printer.Module() is better than
+printer.PrintModule() Try to return early if !contition{ return } for _, e := range whatever{ if e == foo{ bar() } } is better than
+if contition{ for _, e := range whatever{ if e == foo{ return } } } Identify common repeated methods and replace with interfaces func ApplicationAttribute(app *sysl.Application){ if description := app.GetAttrs()[&amp;#34;description&amp;#34;]; description != nil { return description.</description>
     </item>
-    
     <item>
       <title>Stuff I encountered when working with go modules</title>
       <link>https://joshcarp.com/posts/gomodules/</link>
       <pubDate>Wed, 05 Feb 2020 00:00:00 +0000</pubDate>
-      
       <guid>https://joshcarp.com/posts/gomodules/</guid>
       <description>go get within a mod is different inside a module vs outside; local installation vs project go.mod
-  go.sum database of hashes; goprivate telling go to go direct
-  Import paths; inside vs outside; everything is absolute
-  So I was wondering what the deal with is with how go modules handle git tags, and what happens when a git repo doesn&amp;rsquo;t have any git releases/tags.</description>
+go.sum database of hashes; goprivate telling go to go direct
+Import paths; inside vs outside; everything is absolute
+So I was wondering what the deal with is with how go modules handle git tags, and what happens when a git repo doesn&amp;rsquo;t have any git releases/tags.
+first, make a repo with a simple go program:</description>
     </item>
-    
     <item>
       <title>About</title>
       <link>https://joshcarp.com/about/</link>
       <pubDate>Tue, 05 Nov 2019 19:22:47 +1100</pubDate>
-      
       <guid>https://joshcarp.com/about/</guid>
       <description>I&amp;rsquo;m a student at The University of Melbourne and a software engineer at ANZ in Melbourne. This website serves as a collection of resources I find usefull and my experience with different topics. Hope you enjoy!
-Contact me at josh@joshcarp.com LinkedinGitHub</description>
+Contact me at josh@joshcarp.com Linkedin GitHub</description>
     </item>
-    
     <item>
       <title>Jekyll</title>
       <link>https://joshcarp.com/posts/2019-07-15-github-and-jekyll/</link>
       <pubDate>Tue, 05 Nov 2019 19:14:57 +1100</pubDate>
-      
       <guid>https://joshcarp.com/posts/2019-07-15-github-and-jekyll/</guid>
       <description>Hello The tutorial which helped me the most has been this: http://dev.im-bot.com/jekyll-travis-github/ Although When I was following there still were a few things which were unclear. So here we are&amp;hellip;
-1. Getting a skeleton Jekyll website up I discovered that someone already made a template repo: https://github.com/barryclark/jekyll-nowOr fork from https://github.com/joshcarp/joshcarp.github.ioI guess it&amp;rsquo;s advised to get Jekyll running locally, even though the end game is to have it all deployable through travis; Sometimes you&amp;rsquo;ll install a plugin and want to test it locally/ need to install another Gem or something.</description>
+1. Getting a skeleton Jekyll website up I discovered that someone already made a template repo: https://github.com/barryclark/jekyll-now Or fork from https://github.com/joshcarp/joshcarp.github.io
+I guess it&amp;rsquo;s advised to get Jekyll running locally, even though the end game is to have it all deployable through travis; Sometimes you&amp;rsquo;ll install a plugin and want to test it locally/ need to install another Gem or something.</description>
     </item>
-    
   </channel>
 </rss>

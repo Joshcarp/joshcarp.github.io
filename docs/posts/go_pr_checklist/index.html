@@ -11,14 +11,14 @@
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Go PR checklist"/>
-<meta name="twitter:description" content="Don&rsquo;t stutter with naming exported identifiers  printer.Module() is better than
-printer.PrintModule() Try to return early  if !contition{ return } for _, e := range whatever{ if e == foo{ bar() } } is better than
-if contition{ for _, e := range whatever{ if e == foo{ return } } } Identify common repeated methods and replace with interfaces  func ApplicationAttribute(app *sysl.Application){ if description := app.GetAttrs()[&#34;description&#34;]; description !"/>
+<meta name="twitter:description" content="Don&rsquo;t stutter with naming exported identifiers printer.Module() is better than
+printer.PrintModule() Try to return early if !contition{ return } for _, e := range whatever{ if e == foo{ bar() } } is better than
+if contition{ for _, e := range whatever{ if e == foo{ return } } } Identify common repeated methods and replace with interfaces func ApplicationAttribute(app *sysl.Application){ if description := app.GetAttrs()[&#34;description&#34;]; description != nil { return description."/>
 
     <meta property="og:title" content="Go PR checklist" />
-<meta property="og:description" content="Don&rsquo;t stutter with naming exported identifiers  printer.Module() is better than
-printer.PrintModule() Try to return early  if !contition{ return } for _, e := range whatever{ if e == foo{ bar() } } is better than
-if contition{ for _, e := range whatever{ if e == foo{ return } } } Identify common repeated methods and replace with interfaces  func ApplicationAttribute(app *sysl.Application){ if description := app.GetAttrs()[&#34;description&#34;]; description !" />
+<meta property="og:description" content="Don&rsquo;t stutter with naming exported identifiers printer.Module() is better than
+printer.PrintModule() Try to return early if !contition{ return } for _, e := range whatever{ if e == foo{ bar() } } is better than
+if contition{ for _, e := range whatever{ if e == foo{ return } } } Identify common repeated methods and replace with interfaces func ApplicationAttribute(app *sysl.Application){ if description := app.GetAttrs()[&#34;description&#34;]; description != nil { return description." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://joshcarp.com/posts/go_pr_checklist/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2020-05-10T00:00:00+00:00" />
@@ -60,7 +60,7 @@ if contition{ for _, e := range whatever{ if e == foo{ return } } } Identify com
     <link rel="icon" type="image/png" href="https://joshcarp.com/favicon.ico" sizes="32x32">
     <link rel="icon" type="image/png" href="https://joshcarp.com/favicon.ico" sizes="16x16">
 
-    <meta name="generator" content="Hugo 0.88.0-DEV" />
+    <meta name="generator" content="Hugo 0.120.4">
   </head>
 
   
@@ -133,103 +133,99 @@ if contition{ for _, e := range whatever{ if e == foo{ return } } } Identify com
         <ol>
 <li>Don&rsquo;t stutter with naming exported identifiers</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">printer.Module()
-</code></pre></div><p>is better than</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">printer.PrintModule()
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>printer.Module()
+</span></span></code></pre></div><p>is better than</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>printer.PrintModule()
+</span></span></code></pre></div><ol start="2">
 <li>Try to return early</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="font-weight:bold">if</span> !contition{
-    <span style="font-weight:bold">return</span> 
-}
-<span style="font-weight:bold">for</span> _, e := <span style="font-weight:bold">range</span> whatever{
-    <span style="font-weight:bold">if</span> e == foo{
-        bar()
-    }
-}
-
-</code></pre></div><p>is better than</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="font-weight:bold">if</span> contition{
-    <span style="font-weight:bold">for</span> _, e := <span style="font-weight:bold">range</span> whatever{
-        <span style="font-weight:bold">if</span> e == foo{
-            <span style="font-weight:bold">return</span>
-        }
-    }
-}
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="font-weight:bold">if</span> !contition{
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> 
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">for</span> _, e := <span style="font-weight:bold">range</span> whatever{
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span> e == foo{
+</span></span><span style="display:flex;"><span>        bar()
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>is better than</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="font-weight:bold">if</span> contition{
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">for</span> _, e := <span style="font-weight:bold">range</span> whatever{
+</span></span><span style="display:flex;"><span>        <span style="font-weight:bold">if</span> e == foo{
+</span></span><span style="display:flex;"><span>            <span style="font-weight:bold">return</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ol start="3">
 <li>Identify common repeated methods and replace with interfaces</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
-<span style="font-weight:bold">func</span> ApplicationAttribute(app *sysl.Application){
-    	<span style="font-weight:bold">if</span> description := app.GetAttrs()[<span style="font-style:italic">&#34;description&#34;</span>]; description != <span style="font-weight:bold">nil</span> {
-		<span style="font-weight:bold">return</span> description.GetS()
-	}
-	<span style="font-weight:bold">return</span> <span style="font-style:italic">&#34;&#34;</span>
-}
-
-<span style="font-weight:bold">func</span> TypeAttribute(t *sysl.Type){
-    	<span style="font-weight:bold">if</span> description := t.GetAttrs()[<span style="font-style:italic">&#34;description&#34;</span>]; description != <span style="font-weight:bold">nil</span> {
-		<span style="font-weight:bold">return</span> description.GetS()
-	}
-	<span style="font-weight:bold">return</span> <span style="font-style:italic">&#34;&#34;</span>
-}
-
-</code></pre></div><p>both these functions can be replaced with</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="font-weight:bold">type</span> Attr <span style="font-weight:bold">interface</span> {
-	GetAttrs() <span style="font-weight:bold">map</span>[<span style="">string</span>]*sysl.Attribute
-}
-
-<span style="font-weight:bold">func</span> Attribute(a Attr, query <span style="">string</span>) <span style="">string</span> {
-	<span style="font-weight:bold">if</span> description := a.GetAttrs()[query]; description != <span style="font-weight:bold">nil</span> {
-		<span style="font-weight:bold">return</span> description.GetS()
-	}
-	<span style="font-weight:bold">return</span> <span style="font-style:italic">&#34;&#34;</span>
-}
-</code></pre></div><ol start="4">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">func</span> ApplicationAttribute(app *sysl.Application){
+</span></span><span style="display:flex;"><span>    	<span style="font-weight:bold">if</span> description := app.GetAttrs()[<span style="font-style:italic">&#34;description&#34;</span>]; description != <span style="font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="font-weight:bold">return</span> description.GetS()
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">return</span> <span style="font-style:italic">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">func</span> TypeAttribute(t *sysl.Type){
+</span></span><span style="display:flex;"><span>    	<span style="font-weight:bold">if</span> description := t.GetAttrs()[<span style="font-style:italic">&#34;description&#34;</span>]; description != <span style="font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="font-weight:bold">return</span> description.GetS()
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">return</span> <span style="font-style:italic">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>both these functions can be replaced with</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="font-weight:bold">type</span> Attr <span style="font-weight:bold">interface</span> {
+</span></span><span style="display:flex;"><span>	GetAttrs() <span style="font-weight:bold">map</span>[<span style="">string</span>]*sysl.Attribute
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">func</span> Attribute(a Attr, query <span style="">string</span>) <span style="">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">if</span> description := a.GetAttrs()[query]; description != <span style="font-weight:bold">nil</span> {
+</span></span><span style="display:flex;"><span>		<span style="font-weight:bold">return</span> description.GetS()
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">return</span> <span style="font-style:italic">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ol start="4">
 <li>Don&rsquo;t go crazy with structs</li>
 </ol>
 <ul>
 <li>Having more verbose functions are, in my opinion, more understandable than having a reciever that doesn&rsquo;t do anything</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="font-weight:bold">type</span> UnneededStruct <span style="font-weight:bold">struct</span>{
-    w io.Writer
-    anotherConstant <span style="font-weight:bold">interface</span>{}
-}
-
-<span style="font-weight:bold">func</span> NewUnneededStruct(w io.Writer, anotherConstant <span style="font-weight:bold">interface</span>{})UnneededStruct{
-    <span style="font-style:italic">// some logic here
-</span><span style="font-style:italic"></span>    <span style="font-weight:bold">return</span> &amp;UnneededStruct{
-        w: w
-        anotherConstant: anotherConstant
-    }
-}
-
-<span style="font-weight:bold">func</span> (u *UnneededStruct)FinallyAFunction(whatever <span style="">string</span>){
-    <span style="font-style:italic">// at this point the logic here doesn&#39;t actually matter, you get the point
-</span><span style="font-style:italic"></span>}
-
-</code></pre></div><p>Replace this with the function without any recievers</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
-<span style="font-weight:bold">func</span> FinallyAFunction(w io.Writer, anotherConstant <span style="font-weight:bold">interface</span>{}, whatever <span style="">string</span>){
-    <span style="font-style:italic">// at this point the logic here doesn&#39;t actually matter, you get the point
-</span><span style="font-style:italic"></span>}
-
-</code></pre></div><ol start="5">
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="font-weight:bold">type</span> UnneededStruct <span style="font-weight:bold">struct</span>{
+</span></span><span style="display:flex;"><span>    w io.Writer
+</span></span><span style="display:flex;"><span>    anotherConstant <span style="font-weight:bold">interface</span>{}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">func</span> NewUnneededStruct(w io.Writer, anotherConstant <span style="font-weight:bold">interface</span>{})UnneededStruct{
+</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// some logic here
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>    <span style="font-weight:bold">return</span> &amp;UnneededStruct{
+</span></span><span style="display:flex;"><span>        w: w
+</span></span><span style="display:flex;"><span>        anotherConstant: anotherConstant
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">func</span> (u *UnneededStruct)FinallyAFunction(whatever <span style="">string</span>){
+</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// at this point the logic here doesn&#39;t actually matter, you get the point
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>}
+</span></span></code></pre></div><p>Replace this with the function without any recievers</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">func</span> FinallyAFunction(w io.Writer, anotherConstant <span style="font-weight:bold">interface</span>{}, whatever <span style="">string</span>){
+</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// at this point the logic here doesn&#39;t actually matter, you get the point
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>}
+</span></span></code></pre></div><ol start="5">
 <li>Use reflect when you need to sort a list of maps</li>
 </ol>
 <ul>
 <li>If you&rsquo;ve got a <code>map[Type]*&lt;anything&gt;</code> you can&rsquo;t use <code>map[Type]*interface{}</code> or <code>map[Type]interface{}</code>, as pointer recievers don&rsquo;t fulfil interface, so you need to use just an <code>interface{}</code> and then <code>reflect.ValueOf(m).MapKeys()</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="font-weight:bold">func</span> SortedKeys(m <span style="font-weight:bold">interface</span>{}) []<span style="">string</span> {
-	keys := reflect.ValueOf(m).MapKeys()
-	ret := make([]<span style="">string</span>, 0, len(keys))
-	<span style="font-weight:bold">for</span> _, v := <span style="font-weight:bold">range</span> keys {
-		ret = append(ret, v.String())
-	}
-	sort.Strings(ret)
-	<span style="font-weight:bold">return</span> ret
-}
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="font-weight:bold">func</span> SortedKeys(m <span style="font-weight:bold">interface</span>{}) []<span style="">string</span> {
+</span></span><span style="display:flex;"><span>	keys := reflect.ValueOf(m).MapKeys()
+</span></span><span style="display:flex;"><span>	ret := make([]<span style="">string</span>, 0, len(keys))
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">for</span> _, v := <span style="font-weight:bold">range</span> keys {
+</span></span><span style="display:flex;"><span>		ret = append(ret, v.String())
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	sort.Strings(ret)
+</span></span><span style="display:flex;"><span>	<span style="font-weight:bold">return</span> ret
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
       </div>
 
 

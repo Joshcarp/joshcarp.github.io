@@ -5,6 +5,7 @@
     <link>https://joshcarp.com/talks/foo/</link>
     <description>Recent content in Presentation Template on Joshua Carpeggiani</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://joshcarp.com/talks/foo/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <atom:link href="https://joshcarp.com/talks/foo/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
