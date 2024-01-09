@@ -3,7 +3,7 @@ title: "About"
 date: 2019-11-05T19:22:47+11:00
 ---
 
-I'm a student at The University of Melbourne and a software engineer at ANZ in Melbourne.
+I am a Software Engineer with a focus on developer tooling and community engagement. Experienced in Protobuf, SRE, Golang, Python, Cloud, Kubernetes, API design and more.
 <br>
 This website serves as a collection of resources I find usefull and my experience with different topics. 
 Hope you enjoy! 
